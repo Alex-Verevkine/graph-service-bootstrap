@@ -1,19 +1,11 @@
-import { Module, HttpModule, Logger } from '@nestjs/common';
-// import { EntityRelationsRepositoryModule } from '@app/entity-relations-repository/entity-relations-repository.module';
+import { Module, Logger } from '@nestjs/common';
 import { EntityRelationsController } from '@app/application/entity-relations/entity-relations.controller';
-// import { EntityRelationsService } from '@app/entity-relations/services/entity-relations.service';
-// import { RelationsFetcherService } from '@app/entity-relations/services/relations-fetcher/relations-fetcher.service';
-// import EntityRelationsMapper from '@app/entity-relations/services/entity-relations-mapper/entity-relations-mapper';
+import { ConfigService } from '@nestjs/config';
 
 @Module({
   // imports: [HttpModule],
   imports: [],
   controllers: [EntityRelationsController],
-  providers: [
-    Logger,
-    //   EntityRelationsService,
-    //   // EntityRelationsMapper,
-    //   // RelationsFetcherService,
-  ],
+  providers: [Logger, ConfigService],
 })
 export class EntityRelationsModule {}
